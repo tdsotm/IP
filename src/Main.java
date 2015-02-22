@@ -29,7 +29,7 @@ public class Main {
                 time++;
                 final int xPos = new Random().nextInt(600);
                 final int yPos = new Random().nextInt(400);
-                MyRekt x = new MyRekt(xPos, yPos, 50, 50);
+                Uranus x = new Uranus(xPos, yPos, 50, 50);
                 workspace.add(x);
                 x.setVisible(true);
 

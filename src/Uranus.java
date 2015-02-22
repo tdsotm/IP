@@ -8,7 +8,7 @@ import java.awt.event.MouseListener;
 /**
  * Created by Doru on 2/19/2015.
  */
-public class MyRekt extends JPanel implements ActionListener {
+public class Uranus extends JPanel implements ActionListener {
     int xPos, yPos;
 
     public void paintComponent(Graphics g) {
@@ -24,7 +24,7 @@ public class MyRekt extends JPanel implements ActionListener {
         System.out.println(e.toString());
     }
 
-    public MyRekt(int x, int y, int width, int height) {
+    public Uranus(int x, int y, int width, int height) {
 
         super();
         xPos = x;
