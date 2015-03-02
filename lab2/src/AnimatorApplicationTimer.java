@@ -1,9 +1,13 @@
 /** Swing version.
  */
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 /* 
  * A template for animation applications.
@@ -14,6 +18,8 @@ public class AnimatorApplicationTimer extends JFrame
     Timer timer;
     boolean frozen = false;
     JLabel label;
+    JLabel albinuta;
+    BufferedImage imagine;
 
     AnimatorApplicationTimer(int fps, String windowTitle) {
         // super(windowTitle);
@@ -39,8 +45,16 @@ public class AnimatorApplicationTimer extends JFrame
         });
 
         label = new JLabel("Frame     ", JLabel.CENTER);
+        try {
+            imagine = ImageIO.read(new File("honey-bee.gif"));
+        } catch (IOException exc) {
+            System.out.println("Eroare!");
+        }
+        albinuta = new JLabel(new ImageIcon(imagine));
+
         label.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
+
                 if (frozen) {
                     frozen = false;
                     startAnimation();
@@ -52,6 +66,7 @@ public class AnimatorApplicationTimer extends JFrame
         });
 
         getContentPane().add(label, BorderLayout.CENTER);
+        getContentPane().add(albinuta, BorderLayout.CENTER);
     }
 
     //Can be invoked by any thread (since timer is thread-safe).
