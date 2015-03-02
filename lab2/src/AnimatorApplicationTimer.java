@@ -6,7 +6,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
 /* 
@@ -20,6 +19,7 @@ public class AnimatorApplicationTimer extends JFrame
     JLabel label;
     JLabel albinuta;
     BufferedImage imagine;
+    Icon icon;
 
     AnimatorApplicationTimer(int fps, String windowTitle) {
         // super(windowTitle);
@@ -43,14 +43,21 @@ public class AnimatorApplicationTimer extends JFrame
                 System.exit(0);
             }
         });
-
-        label = new JLabel("Frame     ", JLabel.CENTER);
         try {
-            imagine = ImageIO.read(new File("honey-bee.gif"));
+            icon = new ImageIcon(ImageIO.read(getClass().getResourceAsStream("honey-bee.gif")));
+
         } catch (IOException exc) {
-            System.out.println("Eroare!");
+            System.out.println(exc.toString());
         }
-        albinuta = new JLabel(new ImageIcon(imagine));
+        label = new JLabel("Frame     ", JLabel.CENTER);
+//        try {
+//            imagine = ImageIO.read(new File("honey-bee.gif"));
+//        } catch (IOException exc) {
+//            System.out.println("Eroare!");
+//        }
+        albinuta = new JLabel(icon);
+        albinuta.setSize(new Dimension(50, 50));
+        albinuta.setMaximumSize(new Dimension(50, 20));
 
         label.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
