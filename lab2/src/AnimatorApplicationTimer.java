@@ -44,14 +44,14 @@ public class AnimatorApplicationTimer extends JFrame
             }
         });
         try {
-            icon = new ImageIcon(ImageIO.read(getClass().getResourceAsStream("honey-bee.gif")));
+            icon = new ImageIcon(ImageIO.read(getClass().getResourceAsStream("albinuta.gif")));
 
         } catch (IOException exc) {
             System.out.println(exc.toString());
         }
         label = new JLabel("Frame     ", JLabel.CENTER);
 //        try {
-//            imagine = ImageIO.read(new File("honey-bee.gif"));
+//            imagine = ImageIO.read(new File("albinuta.gif"));
 //        } catch (IOException exc) {
 //            System.out.println("Eroare!");
 //        }
